@@ -1,0 +1,96 @@
+{
+  "name": "@chasenocap/graphql-toolkit",
+  "version": "1.0.0",
+  "description": "Shared GraphQL utilities and federation patterns for metaGOTHIC services",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CLAUDE.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint src tests",
+    "lint:fix": "eslint src tests --fix",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist coverage",
+    "prebuild": "npm run clean",
+    "prepublishOnly": "npm run clean && npm run build && npm test"
+  },
+  "keywords": [
+    "graphql",
+    "mercurius",
+    "federation",
+    "schema-composition",
+    "dataloader",
+    "error-handling",
+    "subscriptions",
+    "performance",
+    "metaGOTHIC"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChaseNoCap/graphql-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChaseNoCap/graphql-toolkit/issues"
+  },
+  "homepage": "https://github.com/ChaseNoCap/graphql-toolkit#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "@chasenocap/di-framework": "^1.0.0",
+    "@chasenocap/logger": "^1.0.0",
+    "@chasenocap/cache": "^1.0.5",
+    "mercurius": "^14.0.0",
+    "fastify": "^4.26.0",
+    "graphql": "^16.8.0",
+    "dataloader": "^2.2.0",
+    "inversify": "^6.0.2",
+    "reflect-metadata": "^0.2.1"
+  },
+  "devDependencies": {
+    "@chasenocap/test-helpers": "^0.1.0",
+    "@chasenocap/test-mocks": "^0.1.1",
+    "@eslint/js": "^9.27.0",
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitest/coverage-v8": "^3.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "globals": "^16.2.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0",
+    "vitest": "^3.0.0"
+  },
+  "peerDependencies": {
+    "fastify": "^4.26.0",
+    "graphql": "^16.8.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "tier": "shared",
+  "unifiedDependencies": {
+    "tier": "shared",
+    "strategy": "batch-5min",
+    "localDevelopment": true
+  }
+}
